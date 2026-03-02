@@ -47,8 +47,11 @@ const ContactSection = () => {
 
             <div className="space-y-6">
               {[
-                { icon: Mail, label: "hello@telespeak.tech" },
-                { icon: MessageSquare, label: "Live Chat Available 24/7" },
+                { icon: Mail, label: "Info@telespeaktechnologies.com" },
+                {
+                  icon: MessageSquare,
+                  label: "Contact Number: +91 8777275756",
+                },
               ].map((item) => (
                 <div key={item.label} className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
