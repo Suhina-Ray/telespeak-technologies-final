@@ -46,12 +46,15 @@
     --sidebar-ring: 130 100% 42%;
 
     /* Custom tokens */
-    --neon-glow: 0 0 20px hsla(162, 89%, 63%, 0.4),
-      0 0 40px hsl(130 100% 42% / 0.2);
-    --neon-glow-strong: 0 0 20px hsla(193, 81%, 54%, 0.6),
-      0 0 60px hsl(130 100% 42% / 0.3), 0 0 100px hsl(130 100% 42% / 0.1);
-    --card-shadow: 0 4px 30px hsl(0 0% 0% / 0.5);
-    --card-hover-shadow: 0 8px 40px hsl(130 100% 42% / 0.15);
+    --neon-glow: 0 0 20px hsla(218, 65%, 18%, 0.6),
+      0 0 40px hsla(28, 95%, 55%, 0.25);
+
+    --neon-glow-strong: 0 0 20px hsla(28, 95%, 55%, 0.6),
+      0 0 60px hsla(28, 95%, 55%, 0.35), 0 0 100px hsla(218, 65%, 18%, 0.3);
+
+    --card-shadow: 0 4px 30px hsl(218 65% 10% / 0.6);
+
+    --card-hover-shadow: 0 8px 40px hsl(28 95% 55% / 0.25);
   }
 
   .dark {
