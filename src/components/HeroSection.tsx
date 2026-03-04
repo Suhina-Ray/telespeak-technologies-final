@@ -70,7 +70,7 @@ const HeroSection = () => {
           >
             <button
               onClick={scrollToServices}
-              className="group flex items-center gap-2 px-8 py-4 rounded-lg bg-primary text-primary-foreground font-display font-semibold text-lg transition-all duration-300 hover:scale-105 animate-pulse-glow"
+              className="group flex items-center gap-2 px-8 py-4 rounded-lg bg-primary text-primary-foreground font-display font-semibold text-lg transition-all duration-300 hover:scale-105"
             >
               Get Started
               <ArrowRight
