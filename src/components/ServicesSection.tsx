@@ -4,8 +4,8 @@ import { useRef } from "react";
 import {
   Target,
   PhoneCall,
-  Megaphone,
-  Code,
+  FileText,
+  DollarSign,
   HeadphonesIcon,
 } from "lucide-react";
 
@@ -14,25 +14,31 @@ const services = [
     icon: Target,
     title: "Lead Generation",
     description:
-      "Driving High Quality Leads for Maximum Conversion Connecting You with Customers Who Matter",
+      "Driving high quality leads and connecting your business with customers who matter.",
   },
   {
     icon: PhoneCall,
-    title: "Call Center Solutions",
+    title: "Chat & Email Support",
     description:
-      "24/7 inbound and outbound call center services with trained agents delivering exceptional customer experiences.",
+      "Real-time assistance and responsive communication for your clients.",
   },
   {
     icon: HeadphonesIcon,
     title: "Customer Support",
     description:
-      "Directly strengthen customer experience, boost outcome, and improve operational efficiency; Provide 24/7 accessible support; Strengthen brand trust and loyalty",
+      "24/7 customer support to strengthen customer experience, improve efficiency, and build brand loyalty.",
   },
   {
-    icon: Megaphone,
-    title: "Digital Marketing",
+    icon: FileText,
+    title: "Medical Transcription",
     description:
-      "Full-spectrum digital marketing including SEO, PPC, social media, and content marketing strategies.",
+      "Accurate and secure transcription services designed for healthcare professionals.",
+  },
+  {
+    icon: DollarSign,
+    title: "Medical Billing",
+    description:
+      "Efficient billing solutions that streamline revenue cycles and improve financial operations.",
   },
 ];
 
@@ -42,6 +48,7 @@ const ServicesSection = () => {
 
   return (
     <section id="services" className="section-padding">
+      {" "}
       <div className="container mx-auto" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -49,12 +56,13 @@ const ServicesSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
+          {" "}
           <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">
-            Our <span className="gradient-text">Services</span>
+            Our <span className="gradient-text">Services</span>{" "}
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Comprehensive technology solutions designed to accelerate your
-            business growth
+            Streamline your workflow with reliable BPO services that support
+            your business operations and customer engagement.
           </p>
           <div className="neon-line max-w-xs mx-auto mt-6" />
         </motion.div>
@@ -66,16 +74,16 @@ const ServicesSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`glass-card p-8 group cursor-default ${
-                i === 3 ? "lg:col-start-2" : ""
-              }`}
+              className="glass-card p-8 group cursor-default"
             >
               <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
                 <service.icon className="w-7 h-7 text-primary" />
               </div>
+
               <h3 className="text-xl font-display font-semibold text-foreground mb-3">
                 {service.title}
               </h3>
+
               <p className="text-muted-foreground leading-relaxed">
                 {service.description}
               </p>

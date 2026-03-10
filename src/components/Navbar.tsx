@@ -30,12 +30,17 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between h-16 md:h-20 px-4 md:px-8">
         {/* Logo */}
-        <button onClick={() => scrollTo("home")} className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center glow-border">
-            <span className="font-display font-bold text-primary-foreground text-sm">TS</span>
-          </div>
+        <button
+          onClick={() => scrollTo("home")}
+          className="flex items-center gap-2 group"
+        >
+          <img
+            src="/favicon.ico"
+            alt="Telespeak Logo"
+            className="w-30 h-12 object-contain"
+          />
           <span className="font-display font-semibold text-lg text-foreground group-hover:text-primary transition-colors">
-            TeleSpeak
+            TELESPEAK TECHNOLOGIES PVT LTD
           </span>
         </button>
 

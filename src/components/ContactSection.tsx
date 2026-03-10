@@ -20,7 +20,9 @@ const ContactSection = () => {
 
   return (
     <section id="contact" className="section-padding">
+      {" "}
       <div className="container mx-auto" ref={ref}>
+        {" "}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Left */}
           <motion.div
@@ -31,23 +33,15 @@ const ContactSection = () => {
             <h2 className="text-3xl md:text-5xl font-display font-bold mb-6">
               Let's <span className="gradient-text">Connect</span>
             </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+
+            <p className="text-muted-foreground text-lg leading-relaxed mb-10">
               Ready to transform your business? Get in touch with our team and
               discover how TeleSpeak Technologies can accelerate your growth.
             </p>
 
-            {/* Added Company Info */}
-            <p className="text-foreground font-semibold mb-2">
-              Telespeak Technologies Private Limited
-            </p>
-            <p className="text-muted-foreground text-sm leading-relaxed mb-8">
-              Address: 86 Golaghata Road, Dakshindari, Ultadanga, Sreebhumi,
-              North 24 Parganas, Sreebhumi, West Bengal, India, 700048
-            </p>
-
             <div className="space-y-6">
               {[
-                { icon: Mail, label: "Info@telespeaktechnologies.com" },
+                { icon: Mail, label: "info@telespeaktechnologies.com" },
                 {
                   icon: MessageSquare,
                   label: "Contact Number: +91 8777275756",
@@ -62,7 +56,6 @@ const ContactSection = () => {
               ))}
             </div>
           </motion.div>
-
           {/* Right - form */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
