@@ -34,7 +34,7 @@ const TestimonialsSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">
-            Client <span className="gradient-text">Testimonials</span>
+            <span className="gradient-text">Accreditions</span>
           </h2>
           <p className="text-muted-foreground text-lg">
             What our partners say about working with us
@@ -57,7 +57,10 @@ const TestimonialsSection = () => {
               </p>
               <div className="flex items-center gap-1 mb-4">
                 {[...Array(5)].map((_, idx) => (
-                  <Star key={idx} className="w-4 h-4 text-primary fill-primary" />
+                  <Star
+                    key={idx}
+                    className="w-4 h-4 text-primary fill-primary"
+                  />
                 ))}
               </div>
               <div>

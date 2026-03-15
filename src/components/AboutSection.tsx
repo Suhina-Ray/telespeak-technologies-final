@@ -54,49 +54,7 @@ const AboutSection = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.2 }}
             className="relative"
-          >
-            <div className="glass-card p-10 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-primary/5 rounded-full blur-3xl" />
-              <Zap className="w-12 h-12 text-primary mb-6" />
-              <h3 className="text-2xl font-display font-bold text-foreground mb-4">
-                Technology-Driven Growth
-              </h3>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                We leverage cutting-edge AI, automation, and analytics to
-                optimize every touchpoint of your business operations.
-              </p>
-              <div className="space-y-4">
-                {[
-                  { label: "Client Satisfaction", value: 98 },
-                  { label: "Project Delivery Rate", value: 95 },
-                  { label: "Team Efficiency", value: 92 },
-                ].map((stat) => (
-                  <div key={stat.label}>
-                    <div className="flex justify-between text-sm mb-1">
-                      <span className="text-muted-foreground">
-                        {stat.label}
-                      </span>
-                      <span className="text-primary font-semibold">
-                        {stat.value}%
-                      </span>
-                    </div>
-                    <div className="h-2 rounded-full bg-secondary overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        animate={isInView ? { width: `${stat.value}%` } : {}}
-                        transition={{
-                          duration: 1.2,
-                          delay: 0.5,
-                          ease: "easeOut",
-                        }}
-                        className="h-full rounded-full bg-primary"
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
+          ></motion.div>
         </div>
       </div>
     </section>

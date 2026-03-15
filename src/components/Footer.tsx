@@ -1,4 +1,4 @@
-import { Github, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Linkedin, Facebook } from "lucide-react";
 
 const Footer = () => {
   const scrollTo = (id: string) => {
@@ -11,7 +11,6 @@ const Footer = () => {
     <footer className="border-t border-border bg-background">
       {" "}
       <div className="container mx-auto px-4 md:px-8 py-16">
-        {" "}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Company */}
           <div className="md:col-span-2">
@@ -31,17 +30,44 @@ const Footer = () => {
               customer support, medical transcription, and billing solutions.
             </p>
 
-            <p className="text-sm text-muted-foreground leading-relaxed">
+            <p className="text-sm text-muted-foreground leading-relaxed mb-6">
               86 Golaghata Road, Dakshindari, Ultadanga, Sreebhumi,
               <br />
               North 24 Parganas, West Bengal, India – 700048
             </p>
+            <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+              ISO 9001:2015 Compliant <br />
+              ISO 27001:2022 Compliant <br />
+              Robust information security management practices.
+            </p>
+            {/* Social links */}
+            <div className="flex gap-4">
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-lg bg-secondary/50 border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 transition-all duration-300"
+              >
+                <Facebook size={18} />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-lg bg-secondary/50 border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 transition-all duration-300"
+              >
+                <Linkedin size={18} />
+              </a>
+            </div>
           </div>
+
           {/* Quick links */}
           <div>
             <h4 className="font-display font-semibold text-foreground mb-4">
               Quick Links
             </h4>
+
             <ul className="space-y-3">
               {["Home", "Services", "About", "Contact"].map((item) => (
                 <li key={item}>
@@ -55,11 +81,13 @@ const Footer = () => {
               ))}
             </ul>
           </div>
+
           {/* Services */}
           <div>
             <h4 className="font-display font-semibold text-foreground mb-4">
               Services
             </h4>
+
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li>Chat & Email Support</li>
               <li>Medical Transcription</li>
@@ -68,7 +96,9 @@ const Footer = () => {
             </ul>
           </div>
         </div>
+
         <div className="neon-line mt-12 mb-8" />
+
         {/* Bottom */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">

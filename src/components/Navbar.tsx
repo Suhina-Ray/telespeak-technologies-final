@@ -7,9 +7,29 @@ const navItems = ["Home", "Services", "About", "Solutions", "Contact"];
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 50);
+
+      const sections = navItems.map((item) =>
+        document.getElementById(item.toLowerCase())
+      );
+      const scrollPosition = window.scrollY + 150;
+
+      sections.forEach((section) => {
+        if (!section) return;
+
+        if (
+          scrollPosition >= section.offsetTop &&
+          scrollPosition < section.offsetTop + section.offsetHeight
+        ) {
+          setActiveSection(section.id);
+        }
+      });
+    };
+
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -28,45 +48,56 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
+      {" "}
       <div className="container mx-auto flex items-center justify-between h-16 md:h-20 px-4 md:px-8">
         {/* Logo */}
         <button
           onClick={() => scrollTo("home")}
-          className="flex items-center gap-2 group"
+          className="flex items-center gap-3 group"
         >
           <img
             src="/favicon.ico"
             alt="Telespeak Logo"
-            className="w-30 h-12 object-contain"
+            className="h-12 object-contain"
           />
-          <span className="font-display font-semibold text-lg text-foreground group-hover:text-primary transition-colors">
-            TELESPEAK TECHNOLOGIES PVT LTD
-          </span>
         </button>
 
         {/* Desktop nav */}
         <ul className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => (
-            <li key={item}>
-              <button
-                onClick={() => scrollTo(item)}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
-              >
-                {item}
-              </button>
-            </li>
-          ))}
+          {navItems.map((item) => {
+            const id = item.toLowerCase();
+            const active = activeSection === id;
+
+            return (
+              <li key={item}>
+                <button
+                  onClick={() => scrollTo(item)}
+                  className={`text-sm font-medium transition-colors relative
+              ${
+                active
+                  ? "text-primary"
+                  : "text-muted-foreground hover:text-primary"
+              }
+              after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:h-[2px]
+              after:bg-primary after:transition-all after:duration-300
+              ${active ? "after:w-full" : "after:w-0 hover:after:w-full"}
+              `}
+                >
+                  {item}
+                </button>
+              </li>
+            );
+          })}
         </ul>
 
         {/* Mobile toggle */}
         <button
           className="md:hidden text-foreground"
-          onClick={() => setMobileOpen(!mobileOpen)}
+          onClick={() => setMobileOpen((prev) => !prev)}
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
-
       {/* Mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
@@ -77,16 +108,26 @@ const Navbar = () => {
             className="md:hidden bg-background/95 backdrop-blur-md border-b border-border overflow-hidden"
           >
             <ul className="flex flex-col gap-2 p-4">
-              {navItems.map((item) => (
-                <li key={item}>
-                  <button
-                    onClick={() => scrollTo(item)}
-                    className="w-full text-left py-3 px-4 text-muted-foreground hover:text-primary hover:bg-secondary/50 rounded-lg transition-colors"
-                  >
-                    {item}
-                  </button>
-                </li>
-              ))}
+              {navItems.map((item) => {
+                const id = item.toLowerCase();
+                const active = activeSection === id;
+
+                return (
+                  <li key={item}>
+                    <button
+                      onClick={() => scrollTo(item)}
+                      className={`w-full text-left py-3 px-4 rounded-lg transition-colors
+                  ${
+                    active
+                      ? "text-primary bg-secondary/50"
+                      : "text-muted-foreground hover:text-primary hover:bg-secondary/50"
+                  }`}
+                    >
+                      {item}
+                    </button>
+                  </li>
+                );
+              })}
             </ul>
           </motion.div>
         )}

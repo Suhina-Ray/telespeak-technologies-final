@@ -3,10 +3,10 @@ import { useRef, useEffect, useState } from "react";
 import { Users, TrendingUp, UserCheck, Award } from "lucide-react";
 
 const stats = [
-  { icon: Users, value: 500, suffix: "+", label: "Clients" },
-  { icon: TrendingUp, value: 10000, suffix: "+", label: "Leads Generated" },
+  { icon: Users, value: 50, label: "Clients" },
+  { icon: TrendingUp, value: 50000, suffix: "+", label: "Leads Generated" },
   { icon: UserCheck, value: 50, suffix: "+", label: "Team Members" },
-  { icon: Award, value: 8, suffix: "+", label: "Years Experience" },
+  { icon: Award, value: 10, suffix: "+", label: "Years Experience" },
 ];
 
 const AnimatedCounter = ({
